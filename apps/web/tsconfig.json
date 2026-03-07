@@ -24,7 +24,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@workspace/ui/*": ["../../packages/ui/src/*"]
+      "@workspace/ui/*": ["../../packages/ui/src/*"],
+      "@workspace/auth/*": ["../../packages/auth/src/*"],
+      "@workspace/domain/*": ["../../packages/domain/src/*"]
     }
   }
 }

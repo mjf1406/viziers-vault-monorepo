@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "outDir": "dist",
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@workspace/db": ["../../packages/db/src/client.ts"],
+      "@workspace/db/*": ["../../packages/db/src/*"],
+      "@workspace/auth/*": ["../../packages/auth/src/*"],
+      "@workspace/domain/*": ["../../packages/domain/src/*"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

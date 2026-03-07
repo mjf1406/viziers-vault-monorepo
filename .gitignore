@@ -1,5 +1,6 @@
 # Dependencies
 node_modules
+.pnpm-store
 .pnp
 .pnp.js
 
@@ -32,3 +33,4 @@ npm-debug.log*
 # Misc
 .DS_Store
 *.pem
+start-monorepo
