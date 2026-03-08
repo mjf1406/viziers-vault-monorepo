@@ -22,8 +22,11 @@ import { Button } from "@workspace/ui/components/button";
 ## To-do List
 
 - [ ] Need to test Electron with the parties
+    - GitHub Action to automatically build the Electron app and package it for release.
 - [ ] Need to test self-host version with the parties
     - Need to implement auth with Better Auth for this to work.
+    - GitHub Action to automatically build the self-host version and package it for release.
 - [ ] Need to deploy it and test it.
     - Need to implement auth with Better Auth for this to work.
     - Deploy to Cloudflare Workers so the Hono backend works which will link to a Neon-hosted PostgreSQL database that should work with the `/apps/server`.
+    - Cloudflare Workers should automatically deploy versions when new commits are pushed to the main branch.
