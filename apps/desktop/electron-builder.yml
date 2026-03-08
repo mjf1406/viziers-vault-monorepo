@@ -1,0 +1,51 @@
+appId: com.viziers.vault
+productName: Vizier's Vault
+
+directories:
+  output: dist
+
+files:
+  - out/**/*
+  - "!**/.vscode/*"
+  - "!**/node_modules/*"
+  - "!electron.vite.config.*"
+  - "!{.eslintignore,.eslintrc.*,.prettierrc*,tsconfig.*.json}"
+
+extraResources:
+  - from: resources/migrations
+    to: migrations
+
+asarUnpack:
+  - resources/**/*
+
+win:
+  executableName: ViziersVault
+  target:
+    - target: nsis
+      arch:
+        - x64
+nsis:
+  artifactName: ${name}-${version}-setup.${ext}
+  shortcutName: ${productName}
+  uninstallDisplayName: ${productName}
+  createDesktopShortcut: always
+
+mac:
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+  category: public.app-category.productivity
+dmg:
+  artifactName: ${name}-${version}.${ext}
+
+linux:
+  target:
+    - target: AppImage
+      arch:
+        - x64
+  maintainer: Vizier's Vault
+  category: Utility
+appImage:
+  artifactName: ${name}-${version}.${ext}
