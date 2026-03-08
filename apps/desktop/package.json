@@ -1,6 +1,0 @@
-{
-  "name": "desktop",
-  "version": "0.0.1",
-  "private": true,
-  "description": "Future Electron shell for Vizier's Vault; not implemented yet."
-}
