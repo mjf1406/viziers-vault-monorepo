@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorldsRouteImport } from './routes/worlds'
+import { Route as PartiesRouteImport } from './routes/parties'
 import { Route as BattleMapsRouteImport } from './routes/battle-maps'
 import { Route as IndexRouteImport } from './routes/index'
 
 const WorldsRoute = WorldsRouteImport.update({
   id: '/worlds',
   path: '/worlds',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartiesRoute = PartiesRouteImport.update({
+  id: '/parties',
+  path: '/parties',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BattleMapsRoute = BattleMapsRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/battle-maps': typeof BattleMapsRoute
+  '/parties': typeof PartiesRoute
   '/worlds': typeof WorldsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/battle-maps': typeof BattleMapsRoute
+  '/parties': typeof PartiesRoute
   '/worlds': typeof WorldsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/battle-maps': typeof BattleMapsRoute
+  '/parties': typeof PartiesRoute
   '/worlds': typeof WorldsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/battle-maps' | '/worlds'
+  fullPaths: '/' | '/battle-maps' | '/parties' | '/worlds'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/battle-maps' | '/worlds'
-  id: '__root__' | '/' | '/battle-maps' | '/worlds'
+  to: '/' | '/battle-maps' | '/parties' | '/worlds'
+  id: '__root__' | '/' | '/battle-maps' | '/parties' | '/worlds'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BattleMapsRoute: typeof BattleMapsRoute
+  PartiesRoute: typeof PartiesRoute
   WorldsRoute: typeof WorldsRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/worlds'
       fullPath: '/worlds'
       preLoaderRoute: typeof WorldsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parties': {
+      id: '/parties'
+      path: '/parties'
+      fullPath: '/parties'
+      preLoaderRoute: typeof PartiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/battle-maps': {
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BattleMapsRoute: BattleMapsRoute,
+  PartiesRoute: PartiesRoute,
   WorldsRoute: WorldsRoute,
 }
 export const routeTree = rootRouteImport

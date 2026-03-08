@@ -7,6 +7,14 @@
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**"]
     },
+    "db:generate": {
+      "inputs": ["$TURBO_DEFAULT$", "src/schema/**"],
+      "outputs": ["src/migrations/**"]
+    },
+    "db:migrate": {
+      "dependsOn": ["db:generate"],
+      "cache": false
+    },
     "lint": {
       "dependsOn": ["^lint"]
     },

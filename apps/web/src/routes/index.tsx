@@ -41,6 +41,17 @@ function HomePage() {
             <CardContent>Go to Worlds</CardContent>
           </Card>
         </Link>
+        <Link to="/parties" className="block transition-opacity hover:opacity-90">
+          <Card className="h-full">
+            <CardHeader>
+              <CardTitle>Parties</CardTitle>
+              <CardDescription>
+                Create and manage parties with character levels and quantities.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>Go to Parties</CardContent>
+          </Card>
+        </Link>
       </div>
       <div className="text-muted-foreground mt-6 font-mono text-xs">
         (Press <kbd>d</kbd> to toggle dark mode)
