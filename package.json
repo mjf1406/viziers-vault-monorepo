@@ -4,7 +4,12 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev",
+    "dev": "turbo dev --filter=web --filter=api",
+    "dev:desktop": "turbo dev --filter=desktop",
+    "dev:services": "docker compose -f docker/docker-compose.dev.yml up -d",
+    "dev:stop": "docker compose -f docker/docker-compose.dev.yml down",
+    "db:migrate": "pnpm --filter=@workspace/db run migrate",
+    "db:studio": "pnpm --filter=@workspace/db run studio",
     "lint": "turbo lint",
     "format": "turbo format",
     "typecheck": "turbo typecheck"
