@@ -1,6 +1,6 @@
 # shadcn/ui monorepo template
 
-This is a TanStack Start monorepo template with shadcn/ui.
+This is a Vite monorepo template with shadcn/ui.
 
 ## Adding components
 
