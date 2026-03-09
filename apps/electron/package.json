@@ -1,6 +1,8 @@
 {
   "name": "electron",
   "version": "0.0.1",
+  "description": "Vizier's Vault desktop app (Electron)",
+  "author": "Vizier's Vault",
   "type": "commonjs",
   "private": true,
   "main": "dist/main/index.js",
@@ -18,11 +20,11 @@
     "@workspace/api": "workspace:*",
     "@workspace/db": "workspace:*",
     "drizzle-orm": "^0.38.3",
-    "electron": "^33.0.0",
     "hono": "^4.6.14",
     "web": "workspace:*"
   },
   "devDependencies": {
+    "electron": "^33.0.0",
     "electron-builder": "^25.0.0",
     "esbuild": "^0.24.0",
     "typescript": "^5.9.3"
