@@ -18,7 +18,8 @@ const DrawerTrigger = DrawerPrimitive.Trigger
 DrawerTrigger.displayName = "DrawerTrigger"
 
 const DrawerPortal = DrawerPrimitive.Portal
-DrawerPortal.displayName = "DrawerPortal"
+;(DrawerPortal as React.FC<unknown> & { displayName?: string }).displayName =
+  "DrawerPortal"
 
 const DrawerClose = DrawerPrimitive.Close
 DrawerClose.displayName = "DrawerClose"

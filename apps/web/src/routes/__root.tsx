@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import { Outlet, createRootRoute } from "@tanstack/react-router"
+import { Navbar } from "@/components/navbar"
 import { ThemeProvider } from "@/components/theme-provider"
 import { TooltipProvider } from "@workspace/ui/components/tooltip"
 
@@ -15,7 +16,10 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <TooltipProvider>
-          <Outlet />
+          <Navbar />
+          <main>
+            <Outlet />
+          </main>
         </TooltipProvider>
       </ThemeProvider>
       <ReactQueryDevtools buttonPosition="bottom-right" />

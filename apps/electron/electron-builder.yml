@@ -1,0 +1,28 @@
+appId: com.viziersvault.app
+productName: Vizier's Vault
+directories:
+  output: dist-electron
+publish:
+  provider: github
+extraResources:
+  - from: ../web/dist
+    to: renderer
+  - from: ../../packages/db/src/migrations
+    to: migrations
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+mac:
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+  category: public.app-category.utilities
+linux:
+  target:
+    - target: AppImage
+      arch:
+        - x64
