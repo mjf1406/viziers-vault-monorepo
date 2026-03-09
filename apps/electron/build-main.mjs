@@ -10,7 +10,7 @@ await esbuild.build({
   platform: "node",
   format: "cjs",
   outfile: path.join(__dirname, "dist/main/index.js"),
-  external: ["electron"],
+  external: ["electron", "@electric-sql/pglite"],
   sourcemap: true,
   target: "node20",
 });

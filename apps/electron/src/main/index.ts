@@ -1,4 +1,4 @@
-import { app as electronApp, BrowserWindow } from "electron";
+import { app as electronApp, BrowserWindow, dialog } from "electron";
 import * as fs from "fs";
 import * as path from "path";
 import { drizzle } from "drizzle-orm/pglite";
@@ -67,4 +67,17 @@ async function main() {
   mainWindow.loadURL(`http://localhost:${PORT}`);
 }
 
-electronApp.whenReady().then(main);
+electronApp.on("window-all-closed", () => {
+  if (process.platform !== "darwin") electronApp.quit();
+});
+
+electronApp
+  .whenReady()
+  .then(main)
+  .catch((err: unknown) => {
+    dialog.showErrorBox(
+      "Startup Error",
+      err instanceof Error ? (err.stack ?? err.message) : String(err),
+    );
+    electronApp.quit();
+  });

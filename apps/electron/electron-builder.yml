@@ -9,6 +9,8 @@ extraResources:
     to: renderer
   - from: ../../packages/db/src/migrations
     to: migrations
+asarUnpack:
+  - "node_modules/@electric-sql/pglite/**"
 win:
   target:
     - target: nsis
