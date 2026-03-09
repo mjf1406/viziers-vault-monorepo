@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Vizier's Vault desktop app (Electron)",
   "author": "Vizier's Vault",
+  "repository": "github:mjf1406/viziers-vault-monorepo",
   "type": "commonjs",
   "private": true,
   "main": "dist/main/index.js",
