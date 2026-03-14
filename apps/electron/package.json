@@ -16,18 +16,18 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@electric-sql/pglite": "^0.2.0",
+    "@electric-sql/pglite": "^0.2.0"
+  },
+  "devDependencies": {
     "@hono/node-server": "^1.13.7",
     "@workspace/api": "workspace:*",
     "@workspace/db": "workspace:*",
     "drizzle-orm": "^0.38.3",
-    "hono": "^4.6.14",
-    "web": "workspace:*"
-  },
-  "devDependencies": {
     "electron": "^33.0.0",
     "electron-builder": "^25.0.0",
     "esbuild": "^0.24.0",
-    "typescript": "^5.9.3"
+    "hono": "^4.6.14",
+    "typescript": "^5.9.3",
+    "web": "workspace:*"
   }
 }
